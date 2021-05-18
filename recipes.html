@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./resources/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="resources/bootstrap.min.js" ></script>
+    <script src="./myjs.js"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./mystyles.css">
+</head>
+
+
+
+ <body>
+
+<!-- Modal -->
+<div class="row">
+<img src="https://images-platform.99static.com/223b5pCQcY1OPtnMmc1hYGlz5ZU=/500x500/top/smart/99designs-contests-attachments/6/6719/attachment_6719422" alt="" width="150px">
+<h2 class="recipeh2">Add & Update Hotel Items</h2>
+
+
+</div>
+
+<div class="container2">
+ 
+<!-- ADD PRODUCT FORM -->
+<div
+  class="modal fade"
+  id="addmodal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modelTitleId"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+
+
+
+ <!-- ADD PRODUCT BUTTON -->
+<body class="container">
+  <button 
+    type="button"
+    class="btn3"
+    data-toggle="modal"
+    data-target="#addModal"
+  >
+  Add Recipe
+  </button>
+
+
+
+  
+<!--Title of the PRODUCT -->
+        <div class="form-group">
+          <label for="title">Title:    </label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            aria-describedby="titleHelp"
+            placeholder="Title of item"
+          />
+        </div>
+
+
+
+<!-- PRODUCT Details -->
+        <div class="form-group">
+          <label for="body">Body:   </label>
+          <input
+            type="text"
+            class="form-control"
+            name="body"
+            id="body"
+            aria-describedby="bodyHelp"
+            placeholder="Item Details"
+          />
+        </div>
+      </div>
+
+
+      <div class="modal-footer">
+    <!--ADD BUTTON -->
+
+        <button id="addbtn" class="btn btn-info">Add</button>
+
+    <!--CLOSE BUTTON -->
+
+        <button 
+          type="button"
+          id="addbtn"
+          class="btn btn-secondary btn2"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- UPDATE PRODUCT FORM -->
+
+    <div class="modal fade" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+          <!-- UPDATE PRODUCT BUTTON -->
+
+               <div class="modal-header">
+                  <button 
+                  type="button"
+                  class="btn3" style="margin-top: 30px;"
+                  data-toggle="modal"
+                  data-target="#addModal"
+                >
+                Update
+                </button>       
+                </div>
+
+
+
+<!-- TITLE FIELD -->
+                <div class="modal-body">
+                    <input type="hidden" id="updateid"><br>
+                    <div class="form-group">
+                      <label for="">Title</label>
+                      <input type="text"
+                        class="form-control" name="updatetitle" id="updatetitle" aria-describedby="updatehelpId" placeholder="">
+                     
+                    </div>
+
+<!-- BODY FIELD -->                    
+                    <div class="form-group">
+                      <label for="updatebody">Body</label>
+                      <textarea class="form-control" name="updatebody" id="updatebody" placeholder=""></textarea>
+                    </div>
+                </div>
+
+ 
+        <!-- UPDATE BUTTON -->               
+                <div class="modal-footer">
+                    <button id="addbtn" type="button" class="btn btn-primary">Update</button>
+                  
+        <!-- CLOSE BUTTON -->
+                    <button id="addbtn" type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<img src="https://i.pinimg.com/originals/05/d8/04/05d8045d7f5650a6dc98291b894bbfa0.jpg" alt="" width="30%" style="margin-left: 500px; margin-top: 50px;">
+<!-- RECIPES DISPLAY -->
+    <div id="recipes">
+      <h2 class="loading">... Loading the Items Please Wait ...</h2>
+    </div>
+  
+</body>
+</html>

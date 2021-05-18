@@ -1,9 +1,9 @@
 $(function()
 {
-    loadrecipes();    //function will be called off when the page loads
+    loaditem();   
     $("#recipes").on("click","button#del", handledel);
     $("#recipes").on("click","button#edit", handleupdate);
-    $("#addbtn").click(addrecipe);
+    $("#addbtn").click(additem);
     $("#updatesave").click(function(){
         var id= $("#updateid").val();
         var title= $("#updatetitle").val();
@@ -15,7 +15,7 @@ $(function()
             success: function(response)
             {
                 console.log(response)
-                loadrecipes();
+                loaditem();
                 $("#updatemodal").modal("hide")
             }
 
@@ -25,7 +25,7 @@ $(function()
 });
 
 //ADD
-function addrecipe() {
+function additem() {
     var title = $("#title").val();
     var body = $("#body").val();
     $.ajax({
@@ -55,12 +55,13 @@ function handledel(){
         url: "https://usman-recipes.herokuapp.com/api/recipes/"+id,
         method: "DELETE",
         success: function(){
-            loadrecipes();
+            loaditem();
             $("#updatemodal").modal("hide")
         }
     });
 }
 
+//UPDATE
 function handleupdate(){
 var btn=$(this);
     var parentdiv=btn.closest(".recipe");
@@ -73,14 +74,14 @@ var btn=$(this);
     })
 }
 
-
-function loadrecipes(){
-    $.ajax({            //replacement of $.get() to get ajax request
+//LOAD ITEM
+function loaditem(){
+    $.ajax({      
         url: "https://usman-recipes.herokuapp.com/api/recipes",
         method: "GET",
         error: function(response){
             var recipes= $("#recipes");
-            recipes.html("!!!An error has occured!!!")
+            recipes.html("Sorry! Error has occured")
         },
         success: function(response){
             console.log(response)
@@ -89,8 +90,7 @@ function loadrecipes(){
             for(var i=0;i<response.length;i++)
             {
                var rec=response[i];
-               
-               // recipes.append("<div><h3>"+rec.title+ "<h6>"+rec.body+ "</h6>"+"</h3></div>")
+            
                   recipes.append(`<div class ="recipe" data-id="${rec._id}"><h3>${rec.title}</h3><p>${rec.body}<br>
                   <button id="edit"class="btn btn-info">Edit</button><button id="del"class="btn btn-danger">Delete</button>
                    <hr>${rec.title.length}</p></div>`)
